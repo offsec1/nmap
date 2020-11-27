@@ -6,126 +6,58 @@
  *                                                                         *
  ***********************IMPORTANT NMAP LICENSE TERMS************************
  *                                                                         *
- * The Nmap Security Scanner is (C) 1996-2019 Insecure.Com LLC ("The Nmap  *
+ * The Nmap Security Scanner is (C) 1996-2020 Insecure.Com LLC ("The Nmap  *
  * Project"). Nmap is also a registered trademark of the Nmap Project.     *
- * This program is free software; you may redistribute and/or modify it    *
- * under the terms of the GNU General Public License as published by the   *
- * Free Software Foundation; Version 2 ("GPL"), BUT ONLY WITH ALL OF THE   *
- * CLARIFICATIONS AND EXCEPTIONS DESCRIBED HEREIN.  This guarantees your   *
- * right to use, modify, and redistribute this software under certain      *
- * conditions.  If you wish to embed Nmap technology into proprietary      *
- * software, we sell alternative licenses (contact sales@nmap.com).        *
- * Dozens of software vendors already license Nmap technology such as      *
- * host discovery, port scanning, OS detection, version detection, and     *
- * the Nmap Scripting Engine.                                              *
  *                                                                         *
- * Note that the GPL places important restrictions on "derivative works",  *
- * yet it does not provide a detailed definition of that term.  To avoid   *
- * misunderstandings, we interpret that term as broadly as copyright law   *
- * allows.  For example, we consider an application to constitute a        *
- * derivative work for the purpose of this license if it does any of the   *
- * following with any software or content covered by this license          *
- * ("Covered Software"):                                                   *
+ * This program is distributed under the terms of the Nmap Public Source   *
+ * License (NPSL). The exact license text applying to a particular Nmap    *
+ * release or source code control revision is contained in the LICENSE     *
+ * file distributed with that version of Nmap or source code control       *
+ * revision. More Nmap copyright/legal information is available from       *
+ * https://nmap.org/book/man-legal.html, and further information on the    *
+ * NPSL license itself can be found at https://nmap.org/npsl. This header  *
+ * summarizes some key points from the Nmap license, but is no substitute  *
+ * for the actual license text.                                            *
  *                                                                         *
- * o Integrates source code from Covered Software.                         *
+ * Nmap is generally free for end users to download and use themselves,    *
+ * including commercial use. It is available from https://nmap.org.        *
  *                                                                         *
- * o Reads or includes copyrighted data files, such as Nmap's nmap-os-db   *
- * or nmap-service-probes.                                                 *
+ * The Nmap license generally prohibits companies from using and           *
+ * redistributing Nmap in commercial products, but we sell a special Nmap  *
+ * OEM Edition with a more permissive license and special features for     *
+ * this purpose. See https://nmap.org/oem                                  *
  *                                                                         *
- * o Is designed specifically to execute Covered Software and parse the    *
- * results (as opposed to typical shell or execution-menu apps, which will *
- * execute anything you tell them to).                                     *
+ * If you have received a written Nmap license agreement or contract       *
+ * stating terms other than these (such as an Nmap OEM license), you may   *
+ * choose to use and redistribute Nmap under those terms instead.          *
  *                                                                         *
- * o Includes Covered Software in a proprietary executable installer.  The *
- * installers produced by InstallShield are an example of this.  Including *
- * Nmap with other software in compressed or archival form does not        *
- * trigger this provision, provided appropriate open source decompression  *
- * or de-archiving software is widely available for no charge.  For the    *
- * purposes of this license, an installer is considered to include Covered *
- * Software even if it actually retrieves a copy of Covered Software from  *
- * another source during runtime (such as by downloading it from the       *
- * Internet).                                                              *
- *                                                                         *
- * o Links (statically or dynamically) to a library which does any of the  *
- * above.                                                                  *
- *                                                                         *
- * o Executes a helper program, module, or script to do any of the above.  *
- *                                                                         *
- * This list is not exclusive, but is meant to clarify our interpretation  *
- * of derived works with some common examples.  Other people may interpret *
- * the plain GPL differently, so we consider this a special exception to   *
- * the GPL that we apply to Covered Software.  Works which meet any of     *
- * these conditions must conform to all of the terms of this license,      *
- * particularly including the GPL Section 3 requirements of providing      *
- * source code and allowing free redistribution of the work as a whole.    *
- *                                                                         *
- * As another special exception to the GPL terms, the Nmap Project grants  *
- * permission to link the code of this program with any version of the     *
- * OpenSSL library which is distributed under a license identical to that  *
- * listed in the included docs/licenses/OpenSSL.txt file, and distribute   *
- * linked combinations including the two.                                  *
- *                                                                         *
- * The Nmap Project has permission to redistribute Npcap, a packet         *
- * capturing driver and library for the Microsoft Windows platform.        *
- * Npcap is a separate work with it's own license rather than this Nmap    *
- * license.  Since the Npcap license does not permit redistribution        *
- * without special permission, our Nmap Windows binary packages which      *
- * contain Npcap may not be redistributed without special permission.      *
- *                                                                         *
- * Any redistribution of Covered Software, including any derived works,    *
- * must obey and carry forward all of the terms of this license, including *
- * obeying all GPL rules and restrictions.  For example, source code of    *
- * the whole work must be provided and free redistribution must be         *
- * allowed.  All GPL references to "this License", are to be treated as    *
- * including the terms and conditions of this license text as well.        *
- *                                                                         *
- * Because this license imposes special exceptions to the GPL, Covered     *
- * Work may not be combined (even as part of a larger work) with plain GPL *
- * software.  The terms, conditions, and exceptions of this license must   *
- * be included as well.  This license is incompatible with some other open *
- * source licenses as well.  In some cases we can relicense portions of    *
- * Nmap or grant special permissions to use it in other open source        *
- * software.  Please contact fyodor@nmap.org with any such requests.       *
- * Similarly, we don't incorporate incompatible open source software into  *
- * Covered Software without special permission from the copyright holders. *
- *                                                                         *
- * If you have any questions about the licensing restrictions on using     *
- * Nmap in other works, we are happy to help.  As mentioned above, we also *
- * offer an alternative license to integrate Nmap into proprietary         *
- * applications and appliances.  These contracts have been sold to dozens  *
- * of software vendors, and generally include a perpetual license as well  *
- * as providing support and updates.  They also fund the continued         *
- * development of Nmap.  Please email sales@nmap.com for further           *
- * information.                                                            *
- *                                                                         *
- * If you have received a written license agreement or contract for        *
- * Covered Software stating terms other than these, you may choose to use  *
- * and redistribute Covered Software under those terms instead of these.   *
+ * The official Nmap Windows builds include the Npcap software             *
+ * (https://npcap.org) for packet capture and transmission. It is under    *
+ * separate license terms which forbid redistribution without special      *
+ * permission. So the official Nmap Windows builds may not be              *
+ * redistributed without special permission (such as an Nmap OEM           *
+ * license).                                                               *
  *                                                                         *
  * Source is provided to this software because we believe users have a     *
  * right to know exactly what a program is going to do before they run it. *
  * This also allows you to audit the software for security holes.          *
  *                                                                         *
  * Source code also allows you to port Nmap to new platforms, fix bugs,    *
- * and add new features.  You are highly encouraged to send your changes   *
- * to the dev@nmap.org mailing list for possible incorporation into the    *
- * main distribution.  By sending these changes to Fyodor or one of the    *
- * Insecure.Org development mailing lists, or checking them into the Nmap  *
- * source code repository, it is understood (unless you specify            *
- * otherwise) that you are offering the Nmap Project the unlimited,        *
- * non-exclusive right to reuse, modify, and relicense the code.  Nmap     *
- * will always be available Open Source, but this is important because     *
- * the inability to relicense code has caused devastating problems for     *
- * other Free Software projects (such as KDE and NASM).  We also           *
- * occasionally relicense the code to third parties as discussed above.    *
- * If you wish to specify special license conditions of your               *
- * contributions, just say so when you send them.                          *
+ * and add new features.  You are highly encouraged to submit your         *
+ * changes as a Github PR or by email to the dev@nmap.org mailing list     *
+ * for possible incorporation into the main distribution. Unless you       *
+ * specify otherwise, it is understood that you are offering us very       *
+ * broad rights to use your submissions as described in the Nmap Public    *
+ * Source License Contributor Agreement. This is important because we      *
+ * fund the project by selling licenses with various terms, and also       *
+ * because the inability to relicense code has caused devastating          *
+ * problems for other Free Software projects (such as KDE and NASM).       *
  *                                                                         *
- * This program is distributed in the hope that it will be useful, but     *
- * WITHOUT ANY WARRANTY; without even the implied warranty of              *
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the Nmap      *
- * license file for more details (it's in a COPYING file included with     *
- * Nmap, and also available from https://svn.nmap.org/nmap/COPYING)        *
+ * The free version of Nmap is distributed in the hope that it will be     *
+ * useful, but WITHOUT ANY WARRANTY; without even the implied warranty of  *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. Warranties,        *
+ * indemnification and commercial support are all available through the    *
+ * Npcap OEM program--see https://nmap.org/oem.                            *
  *                                                                         *
  ***************************************************************************/
 
@@ -610,7 +542,7 @@ bool HostScanStats::sendOK(struct timeval *when) {
   struct timeval probe_to, earliest_to, sendTime;
   long tdiff;
 
-  if (target->timedOut(&USI->now) || completed()) {
+  if ((!USI->ping_scan && target->timedOut(&USI->now)) || completed()) {
     if (when)
       *when = USI->now;
     return false;
@@ -748,7 +680,7 @@ unsigned int HostScanStats::allowedTryno(bool *capped, bool *mayincrease) {
   } else if (capped) *capped = false;
 
   /* Decide if the tryno can possibly increase.  */
-  if (tryno_mayincrease && num_probes_active == 0 && freshPortsLeft() == 0) {
+  if (tryno_mayincrease && num_probes_active == 0 && !freshPortsLeft()) {
     /* If every outstanding probe is timedout and at maxval, then no further
        retransmits are necessary. */
     for (probeI = probes_outstanding.begin();
@@ -1220,6 +1152,9 @@ int UltraScanInfo::removeCompletedHosts() {
 
       TIMEVAL_MSEC_ADD(compare, hss->completiontime, completedHostLifetime);
       if (TIMEVAL_AFTER(now, compare) ) {
+        /* Any active probes in completed hosts count against our global
+         * cwnd, so be sure to remove them or we can run out of space. */
+        hss->destroyAllOutstandingProbes();
         completedHosts.erase(hostI);
         hostsRemoved++;
       }
@@ -1232,8 +1167,8 @@ int UltraScanInfo::removeCompletedHosts() {
     nxt = hostI;
     nxt++;
     hss = *hostI;
-    timedout = hss->target->timedOut(&now);
-    if (hss->completed() || timedout) {
+    // Don't bother checking timedOut for discovery scans or if the target is already completed.
+    if (hss->completed() || (timedout = (!ping_scan) && hss->target->timedOut(&now)) != false) {
       /* A host to remove!  First adjust nextI appropriately */
       if (nextI == hostI && incompleteHosts.size() > 1) {
         nextI++;
@@ -1535,8 +1470,49 @@ static int get_next_target_probe(UltraScanInfo *USI, HostScanStats *hss,
   return -1;
 }
 
+/* Returns whether there are ports remaining to probe */
+bool HostScanStats::freshPortsLeft() {
+  if (USI->tcp_scan) {
+    return (next_portidx < USI->ports->tcp_count);
+  } else if (USI->udp_scan) {
+    return (next_portidx < USI->ports->udp_count);
+  } else if (USI->sctp_scan) {
+    return (next_portidx < USI->ports->sctp_count);
+  } else if (USI->prot_scan) {
+    return (next_portidx < USI->ports->prot_count);
+  } else if (USI->ping_scan_arp || USI->ping_scan_nd) {
+    return !sent_arp;
+  } else if (USI->ping_scan) {
+    if (USI->ptech.rawtcpscan) {
+      if (o.pingtype & PINGTYPE_TCP_USE_ACK && next_ackportpingidx < USI->ports->ack_ping_count)
+        return true;
+      if (o.pingtype & PINGTYPE_TCP_USE_SYN && next_synportpingidx < USI->ports->syn_ping_count)
+        return true;
+    }
+    if (USI->ptech.rawicmpscan) {
+      if ((o.pingtype & PINGTYPE_ICMP_PING) && !sent_icmp_ping)
+        return true;
+      if ((o.pingtype & PINGTYPE_ICMP_MASK) && !sent_icmp_mask)
+        return true;
+      if ((o.pingtype & PINGTYPE_ICMP_TS) && !sent_icmp_ts)
+        return true;
+    }
+    if (USI->ptech.connecttcpscan && next_synportpingidx < USI->ports->syn_ping_count)
+      return true;
+    if (USI->ptech.rawudpscan && next_udpportpingidx < USI->ports->udp_ping_count)
+      return true;
+    if (USI->ptech.rawsctpscan && next_sctpportpingidx < USI->ports->sctp_ping_count)
+      return true;
+    if (USI->ptech.rawprotoscan && next_protoportpingidx < USI->ports->proto_ping_count)
+      return true;
+    return false;
+  }
+  assert(0);
+  return false;
+}
+
 /* Returns the number of ports remaining to probe */
-int HostScanStats::freshPortsLeft() {
+int HostScanStats::numFreshPortsLeft() {
   if (USI->tcp_scan) {
     if (next_portidx >= USI->ports->tcp_count)
       return 0;
@@ -1564,16 +1540,14 @@ int HostScanStats::freshPortsLeft() {
   } else if (USI->ping_scan) {
     unsigned int num_probes = 0;
     if (USI->ptech.rawtcpscan) {
-      if ((o.pingtype & PINGTYPE_TCP_USE_ACK)
-          && next_ackportpingidx < USI->ports->ack_ping_count)
+      if (o.pingtype & PINGTYPE_TCP_USE_ACK)
         num_probes += USI->ports->ack_ping_count - next_ackportpingidx;
-      if ((o.pingtype & PINGTYPE_TCP_USE_SYN)
-          && next_synportpingidx < USI->ports->syn_ping_count)
+      if (o.pingtype & PINGTYPE_TCP_USE_SYN)
         num_probes += USI->ports->syn_ping_count - next_synportpingidx;
     }
-    if (USI->ptech.rawudpscan && next_udpportpingidx < USI->ports->udp_ping_count)
+    if (USI->ptech.rawudpscan)
       num_probes += USI->ports->udp_ping_count - next_udpportpingidx;
-    if (USI->ptech.rawsctpscan && next_sctpportpingidx < USI->ports->sctp_ping_count)
+    if (USI->ptech.rawsctpscan)
       num_probes += USI->ports->sctp_ping_count - next_sctpportpingidx;
     if (USI->ptech.rawicmpscan) {
       if ((o.pingtype & PINGTYPE_ICMP_PING) && !sent_icmp_ping)
@@ -1585,7 +1559,7 @@ int HostScanStats::freshPortsLeft() {
     }
     if (USI->ptech.rawprotoscan)
       num_probes += USI->ports->proto_ping_count - next_protoportpingidx;
-    if (USI->ptech.connecttcpscan && next_synportpingidx < USI->ports->syn_ping_count)
+    if (USI->ptech.connecttcpscan)
       num_probes += USI->ports->syn_ping_count - next_synportpingidx;
     return num_probes;
   }
@@ -1753,7 +1727,7 @@ bool HostScanStats::completed() {
 
   /* With other types of scan, we are done when there are no more ports to
      probe. */
-  return freshPortsLeft() == 0;
+  return !freshPortsLeft();
 }
 
 /* This function provides the proper cwnd and ssthresh to use.  It may
@@ -2040,8 +2014,8 @@ static bool ultrascan_host_pspec_update(UltraScanInfo *USI, HostScanStats *hss,
   int oldstate = hss->target->flags;
   /* If the host is already up, ignore any further updates. */
   if (hss->target->flags != HOST_UP) {
-    assert(newstate == HOST_UP || newstate == HOST_DOWN);
-    hss->target->flags = newstate;
+    // don't allow HOST_UNKNOWN to override a known state.
+    hss->target->flags = (newstate == HOST_UNKNOWN ? oldstate : newstate);
     /* For port scans (not -sn) where output may be delayed until more scan
      * phases are done, emit a hosthint element during host discovery when a
      * target is found to be up. */
@@ -2054,7 +2028,10 @@ static bool ultrascan_host_pspec_update(UltraScanInfo *USI, HostScanStats *hss,
 }
 
 static void ultrascan_host_timeout_init(UltraScanInfo *USI, HostScanStats *hss) {
-  if (!hss->target->timeOutClockRunning() && !hss->target->timedOut(NULL)) {
+  // Don't count host discovery time against host timeout clock. For large
+  // numbers of targets, we might be busy sending lots of new probes to new
+  // targets, and that time shouldn't count against the individual target.
+  if (!USI->ping_scan && !hss->target->timeOutClockRunning() && !hss->target->timedOut(NULL)) {
     if (o.debugging > 2) {
       log_write(LOG_STDOUT, "Ultrascan timeout init for %s at %.6f\n", hss->target->targetipstr(), TIMEVAL_SECS(USI->now));
     }
@@ -2089,12 +2066,12 @@ void ultrascan_host_probe_update(UltraScanInfo *USI, HostScanStats *hss,
   bool adjust_timing = adjust_timing_hint;
   bool adjust_ping = adjust_timing_hint;
 
-  /* If we got a response that meant "down", then it was an ICMP error. These
+  /* If we got a response that meant "down" or "unknown", then it was an ICMP error. These
      are often rate-limited (RFC 1812) or generated by a different host. We only
      allow such responses to increase, not decrease, scanning speed by
      disallowing drops (probe->tryno > 0), and we don't allow changing the ping
      probe to something that's likely to get dropped. */
-  if (rcvdtime != NULL && newstate == HOST_DOWN) {
+  if (rcvdtime != NULL && newstate != HOST_UP) {
     if (probe->tryno > 0) {
       if (adjust_timing && o.debugging > 1)
         log_write(LOG_PLAIN, "Response for %s means new state is down; not adjusting timing.\n", hss->target->targetipstr());
@@ -2532,7 +2509,7 @@ static void printAnyStats(UltraScanInfo *USI) {
         hss = *hostI;
         hss->getTiming(&hosttm);
         log_write(LOG_PLAIN, "   %s: %d/%d/%d/%d/%d/%d %.2f/%d/%d %li/%d/%d\n", hss->target->targetipstr(),
-                  hss->num_probes_active, hss->freshPortsLeft(),
+                  hss->num_probes_active, hss->numFreshPortsLeft(),
                   (int) hss->retry_stack.size(),
                   hss->num_probes_outstanding(),
                   hss->num_probes_waiting_retransmit, (int) hss->probe_bench.size(),
